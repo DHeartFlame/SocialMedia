@@ -1,0 +1,29 @@
+.login-input-container {
+    color: #a8abb0;
+    background: #646b838a;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    &:focus-within {
+        border-color: #1d8def;
+        label {
+            color: #1d8def;
+        }
+    }
+    label {
+        font-size: 12px;
+    }
+    input {
+        background: none;
+        border: none;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        outline: none;
+        width: 100%;
+    }
+    i {
+        color: #a8abb0;
+    }
+}

@@ -1,0 +1,7 @@
+<div class="login-input-container d-flex align-items-center gap-3">
+    <div class="d-flex flex-column flex-fill">
+        <label>{{placeholder}}</label>
+        <input [type]="type" [disabled]='disabled' [value]='value' />
+    </div>
+    <i [class]="faIconName" *ngIf="faIconName" ></i>
+</div>

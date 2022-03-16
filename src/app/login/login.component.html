@@ -1,0 +1,15 @@
+
+<div class="login-bg"></div>
+<div class='login-container d-flex align-items-center w-100 h-100 p-5'>
+    <div class="login-form-container">
+        <h1 class="title">Inicia Sesión</h1>
+        <h3 class="create-account-link mt-3 mb-5">
+            ¿No tienes una cuenta? <span [routerLink]="'/register'">Regístrate</span>
+        </h3>
+        <div class="input-container d-flex flex-column gap-3" [formGroup]='loginFormGroup'>
+            <app-login-input [placeholder]="'Username'" [faIconName]="'fa-solid fa-user'" [formControlName]="'userName'"></app-login-input>
+            <app-login-input [type]="'password'" [placeholder]="'Password'" [faIconName]="'fa-solid fa-key'" [formControlName]="'password'"></app-login-input>
+            <app-button [buttonLabel]="'Entrar'" (onClick)='login()'></app-button>
+        </div>
+    </div>
+</div>

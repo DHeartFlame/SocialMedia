@@ -1,0 +1,63 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "myUser1",
+            "firstName": "Rob",
+            "lastName": "Allen",
+            "email": "myuser1@example.com",
+            "profileImg": "https://chiefrivernursery.com/media/catalog/product/cache/9820170e8aaf17063e79ec8448f2da6f/r/e/red-maple-hardwood_1.jpg"
+        },
+        {
+            "id": 2,
+            "username": "myUser2",
+            "firstName": "Rita",
+            "lastName": "Borlas",
+            "email": "myuser2@example.com",
+            "profileImg": "https://www.bioenciclopedia.com/wp-content/uploads/2016/01/cedro-americano2.jpg"
+        },
+        {
+            "id": 3,
+            "username": "myUser3",
+            "firstName": "Patrick",
+            "lastName": "Anderson",
+            "email": "myuser3@example.com",
+            "profileImg": "https://www.agromatica.es/wp-content/uploads/2013/05/Arbol-abedul.jpg"
+        },
+        {
+            "id": 4,
+            "username": "myUser4",
+            "firstName": "Tessa",
+            "lastName": "Marin",
+            "email": "myuser4@example.com",
+            "profileImg": "https://m.media-amazon.com/images/I/81oCGzK4e6L._AC_SL1500_.jpg"
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "userId": 1,
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM6a5Li7z9h4HUnCBlzhTHqf7ozO7g0iCHqA&usqp=CAU",
+            "likes": 32
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "imageUrl": "https://i.pinimg.com/originals/ac/22/75/ac22750f1799d985742260e6c89ecb09.jpg",
+            "likes": 14
+        },
+        {
+            "id": 3,
+            "userId": 3,
+            "imageUrl": "https://www.postposmo.com/wp-content/uploads/2020/12/%C3%81rbol-abedul-2.jpg",
+            "likes": 1
+        },
+        {
+            "id": 4,
+            "userId": 4,
+            "imageUrl": "https://media.admagazine.com/photos/618a611afb71c632cb9240c5/4:3/w_3476,h_2607,c_limit/83754.jpg",
+            "likes": 158
+        }
+        
+    ]
+}

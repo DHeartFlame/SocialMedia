@@ -1,0 +1,38 @@
+:host{
+    height: 100vh;
+    display: block;
+    .login-bg {
+        background-image: url('../../assets/img/login-bg.jpg');
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: -1;
+    }
+    .login-container {
+        background: #272a37e0;
+        background: linear-gradient(75deg, #272a37e0 40%, rgba(255, 255, 255, 0) 100%)
+    }
+    .login-form-container {
+        max-width: 500px;
+        width: 100%;
+        .title {
+            color: white;
+            font-size: 45px;
+            font-weight: 600;
+        }
+        .create-account-link {
+            font-size: 1.2rem;
+            color: #9aa5b5;
+            a {
+                color: #1d8def;
+                text-decoration: none !important;
+            }
+        }
+        .input-container {
+            width: 100%;
+        }
+    }
+
+}
