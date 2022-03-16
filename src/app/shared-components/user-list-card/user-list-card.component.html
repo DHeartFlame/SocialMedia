@@ -1,0 +1,5 @@
+<div class="user-card">
+    <app-img-loader [round]="true" [src]="user.profileImg" [height]="'100px'" [width]="'100px'"></app-img-loader>
+    <span class="user-name">{{user.firstName}} {{user.lastName}}</span>
+    <app-button [buttonLabel]="'Agregar amigo'" (onClick)="addFriend()"></app-button>
+</div>

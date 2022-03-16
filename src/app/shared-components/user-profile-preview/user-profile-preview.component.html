@@ -2,7 +2,7 @@
     <div class="user-image">
         <img [src]="user.profileImg" />
     </div>
-    <span class="user-name">
+    <span class="user-name" (click)="goToProfile()">
         {{user.getFullName()}}
     </span>
 </div>

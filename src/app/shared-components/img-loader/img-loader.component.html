@@ -1,0 +1,6 @@
+<ng-container>
+    <img [src]="src" *ngIf="src; else noImage" [ngStyle]="{'height': height, 'width': width}" [ngClass]="{'round': round }" />
+    <ng-template #noImage>
+        <img src="../../../assets/img/noimage.png" [ngStyle]="{'height': height, 'width': width}" [ngClass]="{'round': round }"/>
+    </ng-template>
+</ng-container>

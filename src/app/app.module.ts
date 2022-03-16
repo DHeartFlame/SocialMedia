@@ -12,7 +12,17 @@ import { UserProfilePreviewComponent } from './shared-components/user-profile-pr
 import { ProfilePostComponent } from './shared-components/profile-post/profile-post.component';
 import { LoginInputComponent } from './shared-components/login-input/login-input.component';
 import { ButtonComponent } from './shared-components/button/button.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationState } from './state-management/state/auth.state';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from 'src/environments/environment';
+import { ProfileRouteGuard } from './guards/profile.guard';
+import { LayoutComponent } from './layout/layout.component';
+import { NavbarComponent } from './layout/components/navbar/navbar.component';
+import { ImgLoaderComponent } from './shared-components/img-loader/img-loader.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserListCardComponent } from './shared-components/user-list-card/user-list-card.component';
+import { GeneralState } from './state-management/state/general.state';
 
 @NgModule({
   declarations: [
@@ -25,14 +35,26 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProfilePostComponent,
     LoginInputComponent,
     ButtonComponent,
+    LayoutComponent,
+    NavbarComponent,
+    ImgLoaderComponent,
+    UserListComponent,
+    UserListCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxsModule.forRoot( [
+			AuthenticationState,
+      GeneralState
+		], {
+			developmentMode: !environment.production,
+		} ),
+    FormsModule
   ],
-  providers: [],
+  providers: [ProfileRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

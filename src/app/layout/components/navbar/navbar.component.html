@@ -1,0 +1,13 @@
+<nav class="d-flex h-100 align-items-center gap-5 px-5 py-3">
+    <div class="logo nav-item" [routerLink]="'/profile'">
+        <i class="fa-solid fa-handshake"></i>
+        SocialMedia
+    </div>
+    <div class="nav-item" [routerLink]="'/profile'">
+        Perfil
+    </div>
+    
+    <div class="nav-item ml-auto" (click)="logout()">
+        Cerrar sesion
+    </div>
+</nav>

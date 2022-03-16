@@ -11,3 +11,29 @@ body {
 img {
     width: 100%;
 }
+*{
+    scrollbar-width: thin;
+    scrollbar-color: #5f657a;
+    &::-webkit-scrollbar {
+    background: #5f657a;
+    width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #282b35;
+        border-radius: 10px;
+        width: 10px;
+    }
+}
+.text-right {
+    text-align: right;
+}
+.ml-auto {
+    margin-left: auto;
+}
+.text-link {
+    color: #1d8def;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -6,15 +6,15 @@
         <h3 class="create-account-link mt-3 mb-5">
             ¿Ya tienes una cuenta? <a [routerLink]="'/'">Inicia sesion</a>
         </h3>
-        <div class="input-container d-flex flex-column gap-3">
+        <div class="input-container d-flex flex-column gap-3" [formGroup]="registerFormGroup">
             <div class="d-flex gap-4">
-                <app-login-input [placeholder]="'Nombre'" [faIconName]="'fa-solid fa-id-card'"></app-login-input>
-                <app-login-input [placeholder]="'Apellido'" [faIconName]="'fa-solid fa-id-card'"></app-login-input>
+                <app-login-input [placeholder]="'Nombre'" [faIconName]="'fa-solid fa-id-card'" [formControlName]="'firstName'"></app-login-input>
+                <app-login-input [placeholder]="'Apellido'" [faIconName]="'fa-solid fa-id-card'" [formControlName]="'lastName'"></app-login-input>
             </div>
-            <app-login-input [placeholder]="'Username'" [faIconName]="'fa-solid fa-user'"></app-login-input>
-            <app-login-input [placeholder]="'Email'" [type]="'email'" [faIconName]="'fa-solid fa-envelope'"></app-login-input>
-            <app-login-input [type]="'password'" [placeholder]="'Password'" [faIconName]="'fa-solid fa-key'"></app-login-input>
-            <app-button [buttonLabel]="'Crear cuenta'"></app-button>
+            <app-login-input [placeholder]="'Username'" [faIconName]="'fa-solid fa-user'" [formControlName]="'username'"></app-login-input>
+            <app-login-input [placeholder]="'Email'" [type]="'email'" [faIconName]="'fa-solid fa-envelope'" [formControlName]="'email'"></app-login-input>
+            <app-login-input [type]="'password'" [placeholder]="'Password'" [faIconName]="'fa-solid fa-key'" [formControlName]="'password'"></app-login-input>
+            <app-button [buttonLabel]="'Crear cuenta'" (onClick)="register()"></app-button>
     
         </div>
     </div>

@@ -9,11 +9,17 @@ export class User {
     public friends: User[] = [];
 
     public setValues(obj: any) {
-        Object.apply(this, obj);
+        Object.assign(this, obj);
+        this.friends = obj?.friends ?? [];
+        this.friends.map((user) => { return new User().setValues(user) });
         return this;
     }
 
     public getFullName(){
         return this.firstName + ' ' + this.lastName;
+    }
+
+    public isPassword(password: string) {
+        return this.password == password;
     }
 }

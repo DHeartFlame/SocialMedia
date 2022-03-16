@@ -1,27 +1,23 @@
-<div class="profile__grid">
-    <div class="profile__info">
+<app-layout>
+    <div class="sidebar profile__info">
         <div class="profile__img">
-            <img src="https://st2.depositphotos.com/5727866/8396/i/600/depositphotos_83966216-stock-photo-neem-leaves-azadirachta-indica.jpg" />
+            <app-img-loader [src]="user?.profileImg" [round]="true"></app-img-loader>
         </div>
         <div class="profile__user-name">
-            <h4>User Name</h4>
+            <h4>{{user?.firstName}} {{user?.lastName}}</h4>
         </div>
         <div class="profile__friend-list-preview">
             <div class="w-100 section my-3">
-                FRIENDS
+                AMIGOS
             </div>
-            <app-user-profile-preview></app-user-profile-preview>
-            <app-user-profile-preview></app-user-profile-preview>
-            <app-user-profile-preview></app-user-profile-preview>
-            <app-user-profile-preview></app-user-profile-preview>
-            <app-user-profile-preview></app-user-profile-preview>
-            <div class="user-preview-list-empty text-muted text-right">
-                <small>Ver todos</small>
+            <app-user-profile-preview *ngFor="let friend of user.friends" [user]="friend"></app-user-profile-preview>
+            <div class="no-friends-message">
+                <p  *ngIf="user.friends.length == 0">No tiene amigos agregados</p>
+                <span class="text-link" [routerLink]="'/find-users'" *ngIf="!isFriend">Buscar amigos</span>
             </div>
         </div>
     </div>
     <div class="profile__post-contaner">
-        <app-profile-post></app-profile-post>
+        <app-profile-post *ngFor="let post of posts" [post]="post" [user]="post.user!" ></app-profile-post>
     </div>
-
-</div>
+</app-layout>

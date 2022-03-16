@@ -11,16 +11,7 @@
             font-weight: 500;
             color: #9298b3;
         }
-        .no-friends-message {
-            background: #ffffff0f;
-            border-radius: 8px;
-            padding: 8px;
-            text-align: center;
-            font-size: 12px;
-            p {
-                margin: 0;
-            }
-        }
+        
     }
     &__img {
         height: 230px;
@@ -36,8 +27,22 @@
     &__friend-list-preview{
         width: 100%;
     }
-    &__post-contaner {
-        max-width: 900px;
-        padding: 1rem 3rem;
+    
+}
+.no-friends-message {
+    background: #ffffff0f;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    p {
+        margin: 0;
     }
+}
+.userlist-contaner {
+    max-width: 900px;
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }

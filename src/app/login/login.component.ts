@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngxs/store';
+import { LoginUser } from '../state-management/actions/auth.actions';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   public loginFormGroup: FormGroup;
 
-  constructor( private router: Router ) { }
+  constructor( private store: Store ) { }
 
   ngOnInit(): void {
     this.loginFormGroup = new FormGroup({
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
     })
   }
   login(){
-    this.router.navigate(['profile'])
+    const credentials = this.loginFormGroup.getRawValue();
+    this.store.dispatch( new LoginUser(credentials.userName, credentials.password) );
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, FormGroupDirective, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-login-input',
@@ -15,39 +15,57 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class LoginInputComponent implements ControlValueAccessor {
 
+  @Input() formControlName: string;
   @Input() type: string = 'text';
   @Input() placeholder: string = '';
   @Input() faIconName?: string;
-  public value: string = '';
+  public _value: string;
   public disabled: boolean = false;
 
-  onChange = () => {};
-  onTouched = () => {};
   touched = false;
 
-  constructor() { }
+  constructor( protected directive: FormGroupDirective ) { }
   
-  writeValue(value: string) {
-    this.value = value;
-  }
+  onChange = ( value: string ) =>
+	{
+	};
+	onTouched = () =>
+	{
+	};
 
-  registerOnChange(onChange: any) {
-    this.onChange = onChange;
-  }
+	writeValue( value: string ): void
+	{
+		if( typeof value !== 'undefined' )
+		{
+			this.value = value;
+		}
+	}
 
-  registerOnTouched(onTouched: any) {
-    this.onTouched = onTouched;
-  }
+	@Input()
+	set value( value: string )
+	{
+		this._value = value;
+		this.onChange( this._value )
+	}
 
-  markAsTouched() {
-    if (!this.touched) {
-      this.onTouched();
-      this.touched = true;
-    }
-  }
+	get value()
+	{
+		return this._value;
+	}
 
-  setDisabledState(disabled: boolean) {
-    this.disabled = disabled;
-  }
+  registerOnChange( fn: ( value: any ) => void ): void
+	{
+		this.onChange = fn;
+	}
+
+	registerOnTouched( fn: () => void ): void
+	{
+		this.onTouched = fn;
+	}
+
+	setDisabledState( isDisabled: boolean ): void
+	{
+		this.disabled = isDisabled;
+	}
 
 }
